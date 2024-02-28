@@ -16,6 +16,15 @@
 \usepackage{enumitem}
 \usepackage[pdftex]{hyperref}
 \usepackage{fancyhdr}
+\usepackage{xcolor} % 引入顏色包
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true, % 啟用顏色連結
+    linkcolor = blue, % 內部連結的顏色，例如 \ref 的連結
+    filecolor = magenta, % 文件連結的顏色
+    urlcolor = blue, % 外部 URL 的顏色
+    citecolor = green, % 引用連結的顏色
+}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -88,9 +97,9 @@
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{{\LARGE I-Ting Chu}} & Email: \href{mailto:itingchu1005@gmail.com}{itingchu1005@gmail.com}\\
-  \href{https://www.linkedin.com/in/i-ting-chu-7314ab2b5}{Linkedin: https://www.linkedin.com/in/i-ting-chu-7314ab2b5} & Mobile:~~~+886-970-573-793 \\
-  \href{https://github.com/ChuEating1005}{Github: https://github.com/ChuEating1005} \\
+  \textbf{{\LARGE I-Ting Chu}} & Email: \href{mailto:itingchu1005@gmail.com}{\underline{itingchu1005@gmail.com}}\\
+  Linkedin: \href{https://www.linkedin.com/in/i-ting-chu-7314ab2b5}{\underline{https://www.linkedin.com/in/i-ting-chu-7314ab2b5}} & Mobile:~~~+886-970-573-793 \\
+  Github: \href{https://github.com/ChuEating1005}{\underline{https://github.com/ChuEating1005}} \\
 \end{tabular*}
 
 %-----------EDUCATION-----------------
