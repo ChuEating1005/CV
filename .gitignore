@@ -1,1 +1,32 @@
-install-tl-20240227
+# LaTeX temporary files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.cb
+*.ind
+*.idx
+*.ilg
+*.inx
+*.log
+*.lot
+*.out
+*.toc
+
+# LaTeX intermediate files
+*.lof
+*.nav
+*.snm
+*.vrb
+*.synctex.gz
+
+# LaTeX final output files
+*.dvi
+*.pdf
+
+# Other files to ignore
+*.swp
+*~
+*.backup
+*fdb_latexmk
+*.fls
