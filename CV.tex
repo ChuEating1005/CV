@@ -1,0 +1,171 @@
+%------------------------
+% Resume Template
+% Author : Anubhav Singh
+% Github : https://github.com/xprilion
+% License : MIT
+%------------------------
+
+\documentclass[a4paper,22pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.530in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-3pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 }
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {\vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}
+}
+
+\newcommand{\resumeProject}[3]{
+  \vspace{-2pt}\item\small
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{#2} \\
+    \end{tabular*}\vspace{-5pt}
+    \vspace{5pt}
+    \newline{#3}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+%-----------------------------
+%%%%%%  CV STARTS HERE  %%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\LARGE I-Ting Chu}} & Email: \href{mailto:itingchu1005@gmail.com}{itingchu1005@gmail.com}\\
+  \href{https://www.linkedin.com/in/i-ting-chu-7314ab2b5}{Linkedin: https://www.linkedin.com/in/i-ting-chu-7314ab2b5} & Mobile:~~~+886-970-573-793 \\
+  \href{https://github.com/ChuEating1005}{Github: https://github.com/ChuEating1005} \\
+\end{tabular*}
+
+%-----------EDUCATION-----------------
+\section{Education}
+\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{National Yang Ming Chiao Tung University} & Hsinchu, Taiwan\\
+\end{tabular*}
+\begin{description}[font=$\bullet$]
+\vspace{-4pt}
+
+\item 
+\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+Bachelor's degree in Computer Science & Jul. 2022 - Present \\
+\end{tabular*}\vspace{-4pt}
+
+\item 
+\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+GPA: 4.26/4.3 (Overall), 4.26/4.3 (Major) & \\
+\end{tabular*}\vspace{-4pt}
+
+\item 
+{Courses: \textit{DS and OOP,  Calculus, Linear Algebra, Probability, Introduction to Algorithm, Introduction to Database System, Introduction to Cryptography, Introduction to Computer Network, System Administration (SA), Software Defined Networks and Network Function Virtualization (SDNFV), Genetic Algorithm, Fundamental Graph Theory}}
+\end{description}
+
+
+%-----------PROJECTS-----------------
+\vspace{-5pt}
+\section{Projects}
+\resumeSubHeadingListStart
+    \resumeProject
+    {Text-based Dungeon RPG Game}{OOP, C++}
+    {The midterm project for DS \& OOP course. Key Object-Oriented Programming (OOP) concepts such as encapsulation, inheritance and polymorphism were meticulously applied to facilitate complex game mechanics and character interactions within a dungeon exploration setting. The project also features a comprehensive UML class diagram, enhancing the design process and providing clear insights into the system's architecture. \href{https://github.com/ChuEating1005/DS-OOP}{\underline{Link}}}
+    \resumeProject
+    {Tetris Game}{Pygame, Numpy, Genetic Algorithm, Python}
+    {The final project for the genetic algorithms course. This project involves the development of the foundational logic for a Tetris game using Python, coupled with the implementation of the user interface through Pygame. Additionally, we have integrated an AI playing mode, which leverages genetic algorithms to train the agent to optimize gameplay strategies. \href{https://github.com/ChuEating1005/Tetris}{\underline{Link}}}
+    \resumeProject
+    {Band System}{React, Flask, PostgreSQL, Python, Javascript}
+    {The final project for the introduction to database systems course. This project is tailored for band players and musicians, enabling them to effortlessly search for and connect with potential band members. Users can utilize filters to swiftly browse through numerous player profiles that align with their requirements and subsequently send invitation messages to their preferred candidates. The frontend is developed using React to ensure an aesthetically pleasing interface, while the backend is powered by Flask, facilitating a lightweight RESTful API server. \href{https://github.com/ChuEating1005/Band-System}{\underline{Link}}}
+    \resumeProject
+    {Virtual Router}{ONOS, Docker, SDN, NFV, Java}
+    {The final project for \textit{Software-Defined Networking and Network Functions Virtualization (SDNFV)}. This project utilizes a Software-Defined Networking (SDN) framework to function as a virtual router, incorporating essential features like Proxy ARP, Unicast DHCP, and a Learning Bridge within an ONOS application. The developed vRouter application is capable of facilitating intra-domain, inter-domain, and transit traffic communication, showcasing a comprehensive approach to network management and efficiency. \href{https://github.com/ChuEating1005/SDN-NFV/tree/master}{\underline{Link}}}
+\resumeSubHeadingListEnd
+
+%-----------Skills-----------------
+
+\section{Skills}
+\begin{description}[font=$\bullet$]
+\item {\textbf{Programming Language} C/C++, Python, Java, JavaScipt, Shell Script, HTML, SQL}
+\item {\textbf{Framework} React, Flask, LangChain}
+\item {\textbf{Tools} Git, Linux, Docker, System Administration, ONOS, Mininet, Other}
+\end{description}
+
+
+%-----------Awards-----------------
+\section{Awards}
+\begin{description}[font=$\bullet$]
+\item {\textbf{Academic Achievements Awards (Top 5\%)} Fall 2022 (GPA 4.27), Spring 2023 (GPA 4.3)}
+\item {\textbf{Foundation Academic course Award (Top 5\%)} Linear Algebra}
+
+\end{description}
+
+\section{Extracurricular}
+\begin{description}[font=$\bullet$]
+\item
+\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{Member of Information Group of NYCU Computer Science Student Association} & Jul. 2023 - Present \\
+\end{tabular*}
+\item
+\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{Design Officer of NYCU Indigenous Services Organization} & Jul. 2023 - Present \\
+\end{tabular*}
+\item
+\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+\textbf{Co-leader of Development Group of 2024 Meichu Hackathon} & Feb. 2024 - Present \\
+\end{tabular*}
+\end{description}
+
+\end{document}
