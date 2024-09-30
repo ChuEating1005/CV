@@ -30,3 +30,5 @@
 *.backup
 *fdb_latexmk
 *.fls
+
+lcon
