@@ -1,168 +1,291 @@
-%------------------------
-% Resume Template
-% Author : Anubhav Singh
-% Github : https://github.com/xprilion
-% License : MIT
-%------------------------
+\documentclass[10pt, letterpaper]{article}
 
-\documentclass[a4paper,22pt]{article}
-
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=1.5 cm,
+    right=1.5 cm,
+    footskip=1.0 cm,
+]{geometry}
 \usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
 \usepackage{enumitem}
-\usepackage[pdftex]{hyperref}
-\usepackage{fancyhdr}
-\usepackage{xcolor} % 引入顏色包
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks = true, % 啟用顏色連結
-    linkcolor = blue, % 內部連結的顏色，例如 \ref 的連結
-    filecolor = magenta, % 文件連結的顏色
-    urlcolor = blue, % 外部 URL 的顏色
-    citecolor = green, % 引用連結的顏色
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={I-Ting (Benjamin) Chu's CV},
+    pdfauthor={I-Ting (Benjamin) Chu},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0cm}
+\makeatletter
+\let\ps@customFooterStyle\ps@plain
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small I-Ting (Benjamin) Chu - Page \thepage{} of \pageref*{LastPage}}
+}{}{}
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+
+\renewcommand\labelitemi{$\circ$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
 }
 
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.530in}
-\addtolength{\evensidemargin}{-0.375in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.45in}
-\addtolength{\textheight}{1in}
-
-\urlstyle{rm}
-
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
-
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-5pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-3pt}]
-
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[2]{
-  \item\small{
-    \textbf{#1}{: #2 }
-  }
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0.2 cm + 0.00001 cm}{0.2 cm + 0.00001 cm}
+}{
+    \end{adjustwidth}
 }
 
-\newcommand{\resumeItemWithoutTitle}[1]{
-  \item\small{
-    {\vspace{-2pt}}
-  }
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
 }
 
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{#3} & \textit{#4} \\
-    \end{tabular*}\vspace{-5pt}
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
 }
 
-\newcommand{\resumeProject}[3]{
-  \vspace{-2pt}\item\small
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \textit{#2} \\
-    \end{tabular*}\vspace{-5pt}
-    \vspace{5pt}
-    \newline{#3}
-}
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
+    }}}%
+  }%
+}%
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}}
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
 
-\renewcommand{\labelitemii}{$\circ$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}}
-
-%-----------------------------
-%%%%%%  CV STARTS HERE  %%%%%%
+% new command for external links:
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
 
 \begin{document}
+    \placelastupdatedtext
+    \begin{header}
+        \textbf{\fontsize{24 pt}{24 pt}\selectfont I-Ting (Benjamin) Chu}
 
-%----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{{\LARGE I-Ting Chu}} & Email: \href{mailto:itingchu1005@gmail.com}{\underline{itingchu1005@gmail.com}}\\
-  Linkedin: \href{https://www.linkedin.com/in/i-ting-chu-7314ab2b5}{\underline{https://www.linkedin.com/in/i-ting-chu-7314ab2b5}} & Mobile:~~~+886-970-573-793 \\
-  Github: \href{https://github.com/ChuEating1005}{\underline{https://github.com/ChuEating1005}} \\
-\end{tabular*}
+        \vspace{0.3 cm}
 
-%-----------EDUCATION-----------------
-\section{Education}
+        \normalsize
+        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Hsinchu, Taiwan}%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{mailto:itingchu1005@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}itingchu1005@gmail.com}}%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{tel:+886-970-573-793}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}+886-970-573-793}}%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/i-ting-chu-7314ab2b5}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}I-TING CHU}}%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://github.com/ChuEating1005}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}ChuEating1005}}%
+    \end{header}
 
-\resumeSubHeadingListStart
-\resumeSubheading
-  {National Yang Ming Chiao Tung University}{Hsinchu, Taiwan}
-  {B.S. in Computer Science;  GPA: 4.26/4.3 (Overall), 4.26/4.3 (Major)}{Jul. 2022 - Present}
-  {\scriptsize \textit{ \footnotesize{\newline{}\textbf{Courses:}  DS and OOP,  Calculus, Linear Algebra, Probability, Introduction to Algorithm, Introduction to Database System, Introduction to Cryptography, Introduction to Computer Network, System Administration (SA), Software Defined Networks and Network Function Virtualization (SDNFV), Genetic Algorithm, Fundamental Graph Theory}}}
- 
-\resumeSubHeadingListEnd
+    \vspace{0.3 cm}
 
-%-----------PROJECTS-----------------
-\vspace{-5pt}
-\section{Projects}
-\resumeSubHeadingListStart
-    \resumeProject
-    {Text-based Dungeon RPG Game}{OOP, C++}
-    {The midterm project for DS \& OOP course. Key Object-Oriented Programming (OOP) concepts such as encapsulation, inheritance and polymorphism were meticulously applied to facilitate complex game mechanics and character interactions within a dungeon exploration setting. The project also features a comprehensive UML class diagram, enhancing the design process and providing clear insights into the system's architecture. \href{https://github.com/ChuEating1005/DS-OOP}{\underline{Link}}}
-    \resumeProject
-    {Tetris Game}{Pygame, Numpy, Genetic Algorithm, Python}
-    {The final project for the genetic algorithms course. This project involves the development of the foundational logic for a Tetris game using Python, coupled with the implementation of the user interface through Pygame. Additionally, we have integrated an AI playing mode, which leverages genetic algorithms to train the agent to optimize gameplay strategies. \href{https://github.com/ChuEating1005/Tetris}{\underline{Link}}}
-    \resumeProject
-    {Band System}{React, Flask, PostgreSQL, Python, Javascript}
-    {The final project for the introduction to database systems course. This project is tailored for band players and musicians, enabling them to effortlessly search for and connect with potential band members. Users can utilize filters to swiftly browse through numerous player profiles that align with their requirements and subsequently send invitation messages to their preferred candidates. The frontend is developed using React to ensure an aesthetically pleasing interface, while the backend is powered by Flask, facilitating a lightweight RESTful API server. \href{https://github.com/ChuEating1005/Band-System}{\underline{Link}}}
-    \resumeProject
-    {Virtual Router}{ONOS, Docker, SDN, NFV, Java}
-    {The final project for \textit{Software-Defined Networking and Network Functions Virtualization (SDNFV)}. This project utilizes a Software-Defined Networking (SDN) framework to function as a virtual router, incorporating essential features like Proxy ARP, Unicast DHCP, and a Learning Bridge within an ONOS application. The developed vRouter application is capable of facilitating intra-domain, inter-domain, and transit traffic communication, showcasing a comprehensive approach to network management and efficiency. \href{https://github.com/ChuEating1005/SDN-NFV/tree/master}{\underline{Link}}}
-\resumeSubHeadingListEnd
+    \section{Education}
 
-%-----------Skills-----------------
+        \begin{twocolentry}{
+        \textit{Jul. 2022 – Present}}
+            \textbf{National Yang Ming Chiao Tung University, Hsinchu, Taiwan}
+    
+            \begin{highlights}
+                \item GPA: 4.22/4.3 (Overall), 4.26/4.3 (Major); Ranking: 14/192
+                \item Major in Computer Science
+                \item Cross-Disciplinary Specialty: Design and Innovative Technology Program
+            \end{highlights}
+        \end{twocolentry}
 
-\section{Skills}
-\begin{description}[font=$\bullet$]
-\item {\textbf{Programming Language} C/C++, Python, Java, JavaScipt, Shell Script, HTML, SQL}
-\item {\textbf{Framework} React, Flask, LangChain}
-\item {\textbf{Tools} Git, Linux, Docker, System Administration, ONOS, Mininet}
-\end{description}
+    \section{Experience}
+        \begin{twocolentry}{
+        \textit{Aug. 2024 - Present}}
+            \textbf{Comp Photo Lab} \\
+            \textit{Research Assistant}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Advisor: Prof. Yu-Lun Liu
+                \item Research Topic: Undecided
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{Projects}
+
+        \begin{twocolentry}{
+        \textit{\href{https://github.com/ChuEating1005/DS-OOP}{Link}}}
+            \textbf{Text-based Dungeon RPG Game}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Applied Object-Oriented Programming (OOP) concepts such as encapsulation, inheritance, and polymorphism to develop game mechanics.
+                \item Created UML diagrams to enhance system architecture.
+                \item Tool Used: C++
+            \end{highlights}
+        \end{onecolentry}
+        
+        % \vspace{0.10 cm}
+        % \begin{twocolentry}{
+        % \textit{\href{https://github.com/ChuEating1005/Tetris}{Link}}}
+        %     \textbf{Tetris Game}
+        % \end{twocolentry}
+        % \vspace{0.10 cm}
+        % \begin{onecolentry}
+        %     \begin{highlights}
+        %         \item Developed Tetris game with AI mode using genetic algorithms.
+        %         \item Implemented gameplay interface with Pygame.
+        %         \item Tool Used: Python, Genetic Algorithm
+        %     \end{highlights}
+        % \end{onecolentry}
+
+        
+        \vspace{0.10 cm}
+        \begin{twocolentry}{
+        \textit{\href{https://github.com/ChuEating1005/Band-System}{Link}}}
+            \textbf{Band System}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built a platform for musicians to find band members with filters and messaging features.
+                \item Created RESTful API backend with Flask.
+                \item Tool Used: React, Flask, PostgreSQL
+            \end{highlights}
+        \end{onecolentry}
+    
+        % \vspace{0.10 cm}
+        % \begin{twocolentry}{
+        % \textit{\href{https://github.com/ChuEating1005/SDN-NFV}{Link}}}
+        %     \textbf{Virtual Router}
+        % \end{twocolentry}
+        % \vspace{0.10 cm}
+        % \begin{onecolentry}
+        %     \begin{highlights}
+        %         \item Developed a virtual router with Proxy ARP, Unicast DHCP, and Learning Bridge using SDN technologies.
+        %         \item Integrated intra- and inter-domain traffic communication.
+        %         \item Tool Used: ONOS, Mininet, Docker, Java
+        %     \end{highlights}
+        % \end{onecolentry}
+
+        \vspace{0.10 cm}
+        \begin{twocolentry}{
+        \textit{\href{https://github.com/ChuEating1005/Homework-Helper}{Link}}}
+            \textbf{Homework Helper}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item A line bot homework assistant, which allows the user to upload their PDF files, and ask questions about the given PDFs.
+                \item Feature: Basic Q\&A, Connecting to Google Calendar or Notion to upload those schedule.
+                \item Tool Used: Python, LangChain, Pinecone, Redis, Linebot, Flask
+            \end{highlights}
+        \end{onecolentry}
 
 
-%-----------Awards-----------------
-\section{Awards}
-\begin{description}[font=$\bullet$]
-\item {\textbf{Academic Achievements Awards (Top 5\%)} Fall 2022 (GPA 4.27), Spring 2023 (GPA 4.3)}
-\item {\textbf{Foundation Academic course Award (Top 5\%)} Linear Algebra}
+    \section{Skills}
+        \begin{onecolentry}
+            \textbf{Languages:} C++, C, Python, Java, JavaScript, SQL, Shell Script
+        \end{onecolentry}
+        
+        \vspace{0.15 cm}
+        \begin{onecolentry}
+            \textbf{Framework:} React, Vue, Flask, Tailwind, Boostrap
+        \end{onecolentry}
+        
+        \vspace{0.15 cm}
+        \begin{onecolentry}
+            \textbf{Techniques} System Administration, Socket Programming, CCNA, Docker, Git, Linux, FreeBSD
+        \end{onecolentry}
 
-\end{description}
+    \section{Awards}
+        \begin{onecolentry}
+            \textbf{Academic Achievements Awards (Top 5\%)}: Fall 2022 (GPA 4.27), Spring 2023 (GPA 4.3)
+        \end{onecolentry}
+        
+        \vspace{0.15 cm}
+        \begin{onecolentry}
+            \textbf{Foundation Academic Course Award (Top 5\%)}: Linear Algebra
+        \end{onecolentry}
 
-\section{Extracurricular}
-\begin{description}[font=$\bullet$]
-\item
-\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-\textbf{Member of Information Group of NYCU Computer Science Student Association} & Jul. 2023 - Present \\
-\end{tabular*}
-\item
-\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-\textbf{Design Officer of NYCU Indigenous Services Organization} & Jul. 2023 - Present \\
-\end{tabular*}
-\item
-\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-\textbf{Co-leader of Development Group of 2024 Meichu Hackathon} & Feb. 2024 - Present \\
-\end{tabular*}
-\end{description}
+    \section{Extracurricular Activities}
+
+        \begin{twocolentry}{\textit{Jun. 2024 - Present}}
+                \textbf{President} | NYCU Computer Science Student Association 2024
+        \end{twocolentry}
+        % \vspace{0.10 cm}
+        % \begin{onecolentry}
+        %     \begin{highlights}
+        %         \item Leading a team of 50 people, organizing various activities, including company visits, alumni experience sharing sessions, and entertainment events.
+        %         \item Providing a communication channel for CS students to voice their concerns and foster relationships across different grades.
+        %     \end{highlights}
+        % \end{onecolentry}
+        
+        % \vspace{0.15 cm}
+        % \begin{twocolentry}{\textit{Jul. 2023 - May. 2024}}
+        %         \textbf{Member of Information Group} | 14th NYCU Computer Science Student Association
+        % \end{twocolentry}
+        
+        \vspace{0.15 cm}
+        \begin{twocolentry}{\textit{Feb. 2024 - Present}}
+                \textbf{Co-leader of Development Group} | 2024 Meichu Hackathon
+        \end{twocolentry}
+        % \vspace{0.10 cm}
+        % \begin{onecolentry}
+        %     \begin{highlights}
+        %         \item Responsible for the Meichu Hackathon signup website (\href{https://2024.meichuhackathon.org/}{Link}), a Line bot for company activities on the event day, and development group project.
+        %     \end{highlights}
+        % \end{onecolentry}
+    
 
 \end{document}
