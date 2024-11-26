@@ -3,7 +3,7 @@
 % Packages:
 \usepackage[
     ignoreheadfoot,
-    top=2 cm,
+    top=1 cm,
     bottom=2 cm,
     left=1.5 cm,
     right=1.5 cm,
@@ -112,10 +112,17 @@
 % new command for external links:
 \renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
 
+\hypersetup{
+    colorlinks=true,
+    allcolors=black,
+    urlcolor=black,
+    linkcolor=black,
+    citecolor=black
+}
+
 \begin{document}
-    \placelastupdatedtext
     \begin{header}
-        \textbf{\fontsize{24 pt}{24 pt}\selectfont I-Ting (Benjamin) Chu}
+        \textbf{\fontsize{20 pt}{20 pt}\selectfont I-Ting (Benjamin) Chu}
 
         \vspace{0.3 cm}
 
@@ -143,6 +150,12 @@
                 \item GPA: 4.22/4.3 (Overall), 4.26/4.3 (Major); Ranking: 14/192
                 \item Major in Computer Science
                 \item Cross-Disciplinary Specialty: Design and Innovative Technology Program
+                \item Core Courses: \textit{\hrefWithoutArrow{https://github.com/ChuEating1005/Computer-Organization}{Computer Organization}}, 
+                \textit{\hrefWithoutArrow{https://github.com/ChuEating1005/Intro-to-OS}{Intro. to Operating System}}, \\
+                \phantom{\item Core Courses:} \textit{\hrefWithoutArrow{https://github.com/ChuEating1005/Image-Processing}{Image Processing}}, 
+                \textit{\hrefWithoutArrow{https://github.com/ChuEating1005/Intro-to-AI}{Introduction to AI}}, 
+                \textit{\hrefWithoutArrow{https://github.com/ChuEating1005/Reinforcement-Learning}{Reinforcement Learning}}, \\
+                \phantom{\item Core Courses:} \textit{\hrefWithoutArrow{https://github.com/Sean20405/NYCU-UAV}{Computer Vision for UAV Autopilot}}
             \end{highlights}
         \end{twocolentry}
 
@@ -163,17 +176,31 @@
     \section{Projects}
 
         \begin{twocolentry}{
-        \textit{\href{https://github.com/ChuEating1005/DS-OOP}{Link}}}
-            \textbf{Text-based Dungeon RPG Game}
+        \textit{\href{https://github.com/ChuEating1005/YStoryHouse}{Link}}}
+            \textbf{YStory House} 
         \end{twocolentry}
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Applied Object-Oriented Programming (OOP) concepts such as encapsulation, inheritance, and polymorphism to develop game mechanics.
-                \item Created UML diagrams to enhance system architecture.
-                \item Tool Used: C++
+                \item Developed a cross-generational social platform using Django backend and LINE Frontend Framework (LIFF)
+                \item Integrated multiple APIs including ChatGPT, DALL-E, LINE Messaging API, and Speech-to-Text Model
+                \item Implemented containerized deployment using Docker and managed MySQL database
+                \item Tool Used: Python, Django, Docker, MySQL, LINE API, Firebase
             \end{highlights}
         \end{onecolentry}
+        
+        % \begin{twocolentry}{
+        % \textit{\href{https://github.com/ChuEating1005/DS-OOP}{Link}}}
+        %     \textbf{Text-based Dungeon RPG Game}
+        % \end{twocolentry}
+        % \vspace{0.10 cm}
+        % \begin{onecolentry}
+        %     \begin{highlights}
+        %         \item Applied Object-Oriented Programming (OOP) concepts such as encapsulation, inheritance, and polymorphism to develop game mechanics.
+        %         \item Created UML diagrams to enhance system architecture.
+        %         \item Tool Used: C++
+        %     \end{highlights}
+        % \end{onecolentry}
         
         % \vspace{0.10 cm}
         % \begin{twocolentry}{
@@ -188,7 +215,21 @@
         %         \item Tool Used: Python, Genetic Algorithm
         %     \end{highlights}
         % \end{onecolentry}
-
+        
+        \vspace{0.10 cm}
+        \begin{twocolentry}{
+        \textit{\href{https://github.com/ChuEating1005/Homework-Helper}{Link}}}
+            \textbf{Homework Helper}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed a line bot homework assistant that allows users to upload PDF files and ask questions, leveraging GPT-3.5-turbo for responses.
+                \item Implemented a Retrieval-Augmented Generation (RAG) architecture to handle interactions with large PDF files.
+                \item Integrated scheduling features with Google Calendar and Notion, enhancing task management capabilities.
+                \item Tools Used: Python, LangChain, Pinecone, Redis, Linebot, Flask
+            \end{highlights}
+        \end{onecolentry}
         
         \vspace{0.10 cm}
         \begin{twocolentry}{
@@ -218,19 +259,6 @@
         %     \end{highlights}
         % \end{onecolentry}
 
-        \vspace{0.10 cm}
-        \begin{twocolentry}{
-        \textit{\href{https://github.com/ChuEating1005/Homework-Helper}{Link}}}
-            \textbf{Homework Helper}
-        \end{twocolentry}
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item A line bot homework assistant, which allows the user to upload their PDF files, and ask questions about the given PDFs.
-                \item Feature: Basic Q\&A, Connecting to Google Calendar or Notion to upload those schedule.
-                \item Tool Used: Python, LangChain, Pinecone, Redis, Linebot, Flask
-            \end{highlights}
-        \end{onecolentry}
 
 
     \section{Skills}
