@@ -41,6 +41,9 @@
     \usepackage{lmodern}
 \fi
 
+% Reduce overall line spacing
+\linespread{0.95}
+
 \AtBeginEnvironment{adjustwidth}{\partopsep0pt}
 \pagestyle{empty}
 \setcounter{secnumdepth}{0}
@@ -55,15 +58,15 @@
 \makeatother
 \pagestyle{customFooterStyle}
 
-\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titleformat{\section}{\needspace{3\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{0.8pt}\titlerule]
 
-\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+\titlespacing{\section}{-1pt}{0.2 cm}{0.15 cm}
 
 \renewcommand\labelitemi{$\circ$}
 \newenvironment{highlights}{
     \begin{itemize}[
-        topsep=0.10 cm,
-        parsep=0.10 cm,
+        topsep=0.05 cm,
+        parsep=0.05 cm,
         partopsep=0pt,
         itemsep=0pt,
         leftmargin=0.4 cm + 10pt
@@ -149,9 +152,8 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item GPA: 4.22/4.3 (Overall), 4.26/4.3 (Major); Ranking: 14/192; (Transcript \href{https://drive.google.com/file/d/1QG07-RA64KbKBjXKDZ-zhrm4F4nITyDt/view?usp=drive_link}{Link})
-                \item Major in Computer Science
-                \item Cross-Disciplinary Specialty: Design and Innovative Technology Program
+                \item GPA: 4.20/4.3; Ranking: 18/193 (9.33\%); (Transcript \href{https://drive.google.com/file/d/1QWRlNhqEjLBkX1oObqHXwgVbXA3ZzSd2/view?usp=sharing}{Link})
+                \item Major in Computer Science; Cross-Disciplinary Specialty: Design and Innovative Technology Program
                 \item Core Courses: \textit{\hrefWithoutArrow{https://github.com/ChuEating1005/Computer-Organization}{Computer Organization}}, 
                 \textit{\hrefWithoutArrow{https://github.com/ChuEating1005/Intro-to-OS}{Intro. to Operating System}},
                 \textit{\hrefWithoutArrow{https://github.com/ChuEating1005/Image-Processing}{Image Processing}}, 
@@ -175,21 +177,32 @@
             \textbf{Comp Photo Lab} \\
             \textit{Research Assistant}
         \end{twocolentry}
-        \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Advisor: Prof. Yu-Lun Liu
-                \item Research Topic: Color Transform for Multiple Exposure Correction
+                \item Advisor: Prof. Yu-Lun Liu. 
+                \item Research Topic: 3D Diffusion-based Generation.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.10 cm}
+        \begin{twocolentry}{
+            \textit{Mar. 2025 - Jun. 2025}}
+                \textbf{Logitech} \\
+                \textit{Product Quality Assurance Intern}
+        \end{twocolentry}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Use YOLOv8 and other AI techniques to automatically validate keyboard layouts, ensuring that each key's position and font comply with the standard.
             \end{highlights}
         \end{onecolentry}
 
     \section{Projects}
 
         \begin{twocolentry}{
-        \textit{\href{https://github.com/ChuEating1005/YStoryHouse}{Link}}}
-            \textbf{YStory House} 
+        \textit{\href{https://github.com/ChuEating1005/2024-LINE-FRESH}{Link}}}
+            \textbf{YStory House - 2024 LINE FRESH} 
         \end{twocolentry}
-        \vspace{0.10 cm}
+        \vspace{0.05 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Developed a cross-generational social platform using Django backend and LINE Frontend Framework (LIFF)
@@ -199,39 +212,41 @@
             \end{highlights}
         \end{onecolentry}
         
+        % \vspace{0.10 cm}
         % \begin{twocolentry}{
-        % \textit{\href{https://github.com/ChuEating1005/DS-OOP}{Link}}}
-        %     \textbf{Text-based Dungeon RPG Game}
+        % \textit{\href{https://github.com/ChuEating1005/VizGDP}{Link}}}
+        %     \textbf{VizGDP - Final Project for Data Visualization} 
         % \end{twocolentry}
         % \vspace{0.10 cm}
         % \begin{onecolentry}
         %     \begin{highlights}
-        %         \item Applied Object-Oriented Programming (OOP) concepts such as encapsulation, inheritance, and polymorphism to develop game mechanics.
-        %         \item Created UML diagrams to enhance system architecture.
-        %         \item Tool Used: C++
+        %         \item Developed an interactive data visualization platform for global development indicators including GDP, population, happiness index, and life expectancy
+        %         \item Implemented multiple visualization types: Bar Chart Race, Scatter Plot, Choropleth Map, and Timeline of historical economic events
+        %         \item Tools Used: Vue 3, Vite, D3.js, Tailwind CSS
         %     \end{highlights}
         % \end{onecolentry}
         
-        % \vspace{0.10 cm}
-        % \begin{twocolentry}{
-        % \textit{\href{https://github.com/ChuEating1005/Tetris}{Link}}}
-        %     \textbf{Tetris Game}
-        % \end{twocolentry}
-        % \vspace{0.10 cm}
-        % \begin{onecolentry}
-        %     \begin{highlights}
-        %         \item Developed Tetris game with AI mode using genetic algorithms.
-        %         \item Implemented gameplay interface with Pygame.
-        %         \item Tool Used: Python, Genetic Algorithm
-        %     \end{highlights}
-        % \end{onecolentry}
+        \vspace{0.10 cm}
+        \begin{twocolentry}{
+        \textit{\href{https://github.com/ChuEating1005/Exposure-Correction}{Link}}}
+            \textbf{Exposure Correction - Final Project for Image Processing} 
+        \end{twocolentry}
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Implemented a deep learning-based solution to restore over-exposed and under-exposed images using modified Zero-DCE framework
+                \item Designed a multi-scale pipeline with Laplacian pyramid decomposition and progressive enhancement techniques
+                \item Combined approaches from multiple research papers to create an improved exposure correction system
+                \item Tools Used: Python, PyTorch, CUDA, OpenCV
+            \end{highlights}
+        \end{onecolentry}
         
         \vspace{0.10 cm}
         \begin{twocolentry}{
         \textit{\href{https://github.com/ChuEating1005/Homework-Helper}{Link}}}
             \textbf{Homework Helper}
         \end{twocolentry}
-        \vspace{0.10 cm}
+        \vspace{0.05 cm}
         \begin{onecolentry}
             \begin{highlights}
                 \item Developed a line bot homework assistant that allows users to upload PDF files and ask questions, leveraging GPT-3.5-turbo for responses.
@@ -241,19 +256,19 @@
             \end{highlights}
         \end{onecolentry}
         
-        \vspace{0.10 cm}
-        \begin{twocolentry}{
-        \textit{\href{https://github.com/ChuEating1005/Band-System}{Link}}}
-            \textbf{Band System}
-        \end{twocolentry}
-        \vspace{0.10 cm}
-        \begin{onecolentry}
-            \begin{highlights}
-                \item Built a platform for musicians to find band members with filters and messaging features.
-                \item Created RESTful API backend with Flask.
-                \item Tool Used: React, Flask, PostgreSQL
-            \end{highlights}
-        \end{onecolentry}
+        % \vspace{0.10 cm}
+        % \begin{twocolentry}{
+        % \textit{\href{https://github.com/ChuEating1005/Band-System}{Link}}}
+        %     \textbf{Band System}
+        % \end{twocolentry}
+        % \vspace{0.10 cm}
+        % \begin{onecolentry}
+        %     \begin{highlights}
+        %         \item Built a platform for musicians to find band members with filters and messaging features.
+        %         \item Created RESTful API backend with Flask.
+        %         \item Tool Used: React, Flask, PostgreSQL
+        %     \end{highlights}
+        % \end{onecolentry}
     
         % \vspace{0.10 cm}
         % \begin{twocolentry}{
@@ -278,12 +293,18 @@
         
         \vspace{0.15 cm}
         \begin{onecolentry}
-            \textbf{Framework:} React, Vue, Flask, Django, Tailwind, Boostrap, LangChain
+            \textbf{Framework:} React, Vue, Flask, Django, Tailwind, LangChain
         \end{onecolentry}
         
         \vspace{0.15 cm}
         \begin{onecolentry}
-            \textbf{Techniques:} CV, Image Processing, System Administration, Socket Programming, Docker, Git, Linux, FreeBSD
+            \textbf{Techniques:} 3D \& 2D Computer Vision, Image Processing, Network \& System Administration, Socket Programming
+            % \textbf{Techniques:} System Administration, Socket Programming, CCNA, Docker, Git, Linux, FreeBSD
+        \end{onecolentry}
+
+        \vspace{0.15 cm}
+        \begin{onecolentry}
+            \textbf{Tools:} PyTorch, CUDA, OpenCV, YOLO, Docker, Git, Linux, FreeBSD
             % \textbf{Techniques:} System Administration, Socket Programming, CCNA, Docker, Git, Linux, FreeBSD
         \end{onecolentry}
 
@@ -316,7 +337,7 @@
         % \end{twocolentry}
         
         \vspace{0.15 cm}
-        \begin{twocolentry}{\textit{Feb. 2024 - Present}}
+        \begin{twocolentry}{\textit{Feb. 2024 - Nov. 2024}}
                 \textbf{Co-leader of Development Group} | 2024 Meichu Hackathon
         \end{twocolentry}
         % \vspace{0.10 cm}
