@@ -52,9 +52,7 @@
 \setlength{\columnsep}{0cm}
 \makeatletter
 \let\ps@customFooterStyle\ps@plain
-\patchcmd{\ps@customFooterStyle}{\thepage}{
-    \color{gray}\textit{\small I-Ting (Benjamin) Chu - Page \thepage{} of \pageref*{LastPage}}
-}{}{}
+
 \makeatother
 \pagestyle{customFooterStyle}
 
@@ -125,9 +123,9 @@
 
 \begin{document}
     \begin{header}
-        \textbf{\fontsize{20 pt}{20 pt}\selectfont I-Ting (Benjamin) Chu}
+        \textbf{\fontsize{16 pt}{16 pt}\selectfont I-Ting (Benjamin) Chu}
 
-        \vspace{0.3 cm}
+        \vspace{0.1 cm}
 
         \normalsize
         \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Hsinchu, Taiwan}%
@@ -141,7 +139,7 @@
         \mbox{\hrefWithoutArrow{https://github.com/ChuEating1005}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}ChuEating1005}}%
     \end{header}
 
-    \vspace{0.3 cm}
+    \vspace{0.1 cm}
 
     \section{Education}
         \begin{twocolentry}{
@@ -151,7 +149,7 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item GPA: 4.20/4.3; Ranking: 18/193 (9.33\%); (Transcript \href{https://drive.google.com/file/d/1O5Wa4WsjQL2HhvUYLbiBmsxBPsVETnsX/view?usp=sharing}{Link})
+                \item GPA: 4.19/4.3; Ranking: 19/193 (9.84\%); (Transcript \href{https://drive.google.com/file/d/1HNP-WN6whIyqUVS0-OJIng6HpZcEnft8/view?usp=sharing}{Link})
                 \item Major in Computer Science; Cross-Disciplinary Specialty: Design and Innovative Technology Program
                 \item Core Courses: \href{https://github.com/ChuEating1005/NYCU-Coursework}{Link}
             \end{highlights}
@@ -159,29 +157,60 @@
 
     \section{Experience}
         \begin{itemize}[leftmargin=0.4cm]
-            \item \begin{twocolentry}{\textit{Mar. 2025 - Present}}
-                \textbf{Logitech} \\
-                \textit{Product Quality Assurance Intern}
-              \end{twocolentry}
-              \begin{adjustwidth}{0.5cm}{0cm}
-              Use YOLOv8 and other AI techniques to automatically validate keyboard layouts then generate a report, ensuring that each key's position and font comply with the standard.
-              \end{adjustwidth}
+            \item
+                \begin{twocolentry}{\textit{Sep. 2025 - Present}}
+                    \textbf{Microsoft} \\
+                    \textit{Research Development Intern at Azure Map Autosuggest}
+                \end{twocolentry}
+                \vspace{-0.15cm}
+                \begin{adjustwidth}{0.5cm}{0cm}
+                    Assisted in developing the backend API for Azure Map autosuggest, enabling integration into products of various enterprise clients.
+                \end{adjustwidth}
+                \vspace{-0.2cm}
+            \item 
+                \begin{twocolentry}{\textit{Jul. 2025 - Sep. 2025}}
+                    \textbf{Quid} \\
+                    \textit{Connect Solution Engineer Intern}
+                \end{twocolentry}
+                \vspace{-0.15cm}
+                \begin{adjustwidth}{0.5cm}{0cm}
+                    Developed highly reusable workflow templates using Argo, integrated internal databases and APIs, and built comprehensive analytics tools for use by internal data analysts and clients.
+                \end{adjustwidth}
+                \vspace{-0.2cm}
             
-            \item \begin{twocolentry}{\textit{Aug. 2024 - Present}}
-                \textbf{Comp Photo Lab} \\
-                \textit{Research Assistant}
-              \end{twocolentry}
-              \begin{adjustwidth}{0.5cm}{0cm}
-                Advisor: Prof. Yu-Lun Liu. Research Topic: 3D Diffusion-based Generation \& Inpainting.
-              \end{adjustwidth}
+            \item 
+                \begin{twocolentry}{\textit{Mar. 2025 - Jun. 2025}}
+                    \textbf{Logitech} \\
+                    \textit{Product Quality Assurance Intern}
+                \end{twocolentry}
+                \vspace{-0.15cm}
+                \begin{adjustwidth}{0.5cm}{0cm}
+                    Apply YOLOv8 combined with image processing techniques, to automate the validation of keyboard layouts, ensuring accurate positioning and font compliance in accordance with design standards.
+                \end{adjustwidth}
+                \vspace{-0.2cm}
+
+            \item 
+                \begin{twocolentry}{\textit{Aug. 2024 - Present}}
+                    \textbf{Comp Photo Lab} \\
+                    \textit{Research Assistant}
+                \end{twocolentry}
+                \vspace{-0.15cm}
+                \begin{adjustwidth}{0.5cm}{0cm}
+                    Advisor: Prof. Yu-Lun Liu. Research Topic: 3D Reference-based Editing.
+                \end{adjustwidth}
+                \vspace{-0.2cm}
             
-            \item \begin{twocolentry}{\textit{Oct. 2024 - Present}}
-                \textbf{Office of Research and Development, NYCU} \\
-                \textit{Part-time Student Assistant}
-              \end{twocolentry}
-              \begin{adjustwidth}{0.5cm}{0cm}
-                Maintained backend data for the NYCU Scholars Website by retrieving faculty research information from multiple internal databases. Transformed the data into standardized XML format to support automated website updates.
-              \end{adjustwidth}
+            % \item 
+            %     \begin{twocolentry}{\textit{Oct. 2024 - Present}}
+            %         \textbf{Office of Research and Development, NYCU} \\
+            %         \textit{Part-time Student Assistant}
+            %     \end{twocolentry}
+            %     \vspace{-0.1cm}
+            %     \begin{adjustwidth}{0.5cm}{0cm}
+            %         Maintained backend data for the NYCU Scholars Website by retrieving faculty research information from multiple internal databases. Transformed the data into standardized XML format to support automated website updates.
+            %     \end{adjustwidth}
+            %     \vspace{-0.1cm}
+            
         \end{itemize}
 
     \section{Projects}
@@ -223,7 +252,7 @@
             \begin{highlights}
                 \item Restore over-exposed and under-exposed images using modified Zero-DCE framework
                 \item Designed a multi-scale pipeline with Laplacian pyramid decomposition and progressive enhancement techniques
-                \item Tools Used: Python, PyTorch, CUDA, OpenCV
+                \item Tools Used: Python, PyTorch, OpenCV
             \end{highlights}
         \end{onecolentry}
         
@@ -290,7 +319,7 @@
 
         \vspace{0.15 cm}
         \begin{onecolentry}
-            \textbf{Tools:} PyTorch, CUDA, OpenCV, YOLO, Docker, Git, Linux, FreeBSD, AWS
+            \textbf{Tools:} PyTorch, OpenCV, YOLO, Docker, Git, Linux, FreeBSD, AWS
             % \textbf{Techniques:} System Administration, Socket Programming, CCNA, Docker, Git, Linux, FreeBSD
         \end{onecolentry}
 
@@ -306,7 +335,7 @@
 
     \section{Extracurricular Activities}
 
-        \begin{twocolentry}{\textit{Jun. 2024 - Present}}
+        \begin{twocolentry}{\textit{Jun. 2024 - Jun. 2025}}
                 \textbf{President} | NYCU Computer Science Student Association 2024
         \end{twocolentry}
         % \vspace{0.10 cm}
